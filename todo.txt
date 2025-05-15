@@ -1,0 +1,38 @@
+xai_library/
+│
+├── attribution/                   ← 第5章：Saliency Mapping + 第4章 SHAP
+│   ├── saliency.py               # 5.5/5.6 Vanilla / Guided Backprop
+│   ├── gradcam.py                # 5.8 Grad-CAM
+│   ├── integrated_gradients.py   # 书中没有详细讲，但可并入项目
+│   └── shap_explainer.py         # 4.6 SHAP
+│
+├── surrogate/                    ← 第4章：LIME / Anchors + 全局代理
+│   ├── lime_explainer.py         # 4.5 LIME
+│   ├── anchor_explainer.py       # 4.7 Anchors
+│   └── global_tree.py            # 衍生自全局代理模型（第3章 tree ensembles）
+│
+├── visualization/                ← 第6章：网络解剖、概念单元
+│   ├── feature_vis.py            # 6.4 Concept Detector 可用 Lucent 实现
+│   └── net_dissection.py         # 6.4 Network Dissection（可复现论文）
+│
+├── counterfactual/               ← 第9章：Counterfactual Explanation
+│   ├── minimal_cf.py             # 9.2 手写最小扰动优化
+│   └── dice_cf.py                # 9.2 DiCE 库接口封装
+│
+├── global/                       ← chapter 3：Global Interpretability
+│   ├── pdp.py                    # 3.4.1 PDP（Partial Dependence Plots）
+        |-- cnn_pdp
+        |-- transformer_word_embedding_pdp  
+│   └── feature_interaction.py    # 3.4.2 特征交互图
+│
+├── whitebox/                     ← 第2章：透明模型解释
+│   ├── linear_regression_exp.py  # 2.3.1 可解释线性模型
+│   └── gam_explainer.py          # 2.5 GAM + Splines 可解释性
+│
+├── fairness/                     ← 第8章：公平性 + 反歧视
+│   ├── metrics.py                # DP / EO / Calibration 等指标
+│   └── bias_mitigation.py        # 重加权、隐藏敏感特征
+│
+└── utils/                        ← 通用模块
+    ├── model_wrappers.py         # 对 sklearn / torch / keras 模型的包装
+    └── plot_utils.py             # PDP / SHAP / Grad-CAM 可视化工具
